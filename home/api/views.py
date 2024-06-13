@@ -6,17 +6,17 @@ class BlogListAPIView(ListAPIView):
     queryset=Blog.objects.all()
     serializer_class=BlogSerializer
 
-class BlogDetailAPIView(ListAPIView):
+class BlogDetailAPIView(RetrieveAPIView):
     queryset=Blog.objects.all()
     serializer_class=BlogSerializer 
     lookup_field="pk"  #primary key   
 
-class BlogDeleteAPIView(ListAPIView):
+class BlogDeleteAPIView(DestroyAPIView):
     queryset=Blog.objects.all()
     serializer_class=BlogSerializer 
     lookup_field="pk" 
 
-class BlogUpdateAPIView(ListAPIView):
+class BlogUpdateAPIView(UpdateAPIView):
     queryset=Blog.objects.all()
     serializer_class=BlogSerializer 
     lookup_field="pk"         
